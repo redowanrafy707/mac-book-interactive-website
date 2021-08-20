@@ -34,31 +34,61 @@
                     <article class="py-2">
                         Apple M1 chip with 8-core CPU with 4 performance cores and 4 efficiency cores, 7-core GPU, and 16-core Neural Engine 8GB unified memory 256 GB SSD storage Two Thunderbolt/ USb 4 ports Magic keyboard-US English. 
                     </article>
-                      <!-- memory -->
+              </header>  
+              <main>    
+                  <!-- memory -->
                   <h3  class="mt-4">Memory</h3>
-                  <button type="button" class="btn btn-outline-dark ">8GB unified memory</button>
-                  <button type="button" class="btn btn-outline-dark">16GB unified memory</button>
+                  <button type="button" class="btn btn-outline-dark" id="memory1">8GB unified memory</button>
+                  <button type="button" class="btn btn-outline-dark" id="memory2">16GB unified memory</button>
                   <!--  Storage -->
                   <h3  class="mt-5" >Storage</h3>
-                  <button type="button" class="btn btn-outline-dark">256GB SSD storage</button>
-                  <button type="button" class="btn btn-outline-dark">512GB SSD storage</button>
-                  <button type="button" class="btn btn-outline-dark">1TB SSD storage</button>
+                  <button type="button" class="btn btn-outline-dark" id="storage1">256GB SSD storage</button>
+                  <button type="button" class="btn btn-outline-dark" id="storage2">512GB SSD storage</button>
+                  <button type="button" class="btn btn-outline-dark" id="storage3">1TB SSD storage</button>
                   <!-- Choose your deleivery option -->
                   <h3  class="mt-5">Choose your deleivery option</h3>
-                  <button type="button" class="btn btn-outline-dark">Friday,Aug 25 Free Prime Delivery</button>
-                  <button type="button" class="btn btn-outline-dark">Friday,Aug 21 Delivery Charge $20</button>
+                  <button type="button" class="btn btn-outline-dark" id="delivery1">Friday,Aug 25 Free Prime Delivery</button>
+                  <button type="button" class="btn btn-outline-dark" id="delivery2">Friday,Aug 21 Delivery Charge $20</button>
+                  <!-- table -->
+                  <div class="table mt-5">
+                        <table class="table">
+                             <tbody>
+                                <tr>
+                                    <th scope="col">Best Price</th>
+                                    <th scope="col">$ <span id="best-price">1299</span></th>
+                                </tr>
+                                <tr>
+                                    <th scope="row">Extra Memory Cost</th>
+                                    <th>$ <span id="memory-price">0</span></th>
+    
+                                <tr>
+                                    <th scope="row">Extra Storage Cost</th>
+                                    <th>$ <span id="storage-price">0</span></th>
+    
+                                </tr>
+                                <tr>
+                                    <th scope="row">Delivery change</th>
+                                    <th colspan="2">$ <span id="delivery-price">0</span> </th>
+                                </tr>
+                                <tr>
+                                    <th scope="row ">Total Price</th>
+                                    <th colspan="2">$ <span id="total-price">0</span></th> 
+                                </tr>
+                            </tbody>
+                        </table>  
+                </div>
 
-                  <!-- Promocode -->
+                  <!-- Promocode section -->
                   <div class="input-group mb-3 mt-5">
-                    <input type="text" class="form-control" placeholder="" aria-label="" aria-describedby="button-addon2">
-                    <button class="btn btn-danger" type="button" id="button-addon2">Apply</button>
+                    <input type="text" class="form-control" placeholder="" aria-label="" id="input-button" aria-describedby="button-addon2">
+                    <button class="btn btn-danger" type="button" id="apply-button" >Apply</button>
                   </div>
+                  <h3 style="color: red; display: none;" id="error-message">This Coupon Code is not available</h3>
 
-              </header>
+              </main>
 
           </div>
       </div>    
-
 </section>
 
 
@@ -69,15 +99,12 @@
 
 
 
-
-
-
-
-
-    
     <!--------------------------- Footer Start  ---------------------------------------->
-    <footer></footer>
-    <!----------------------------- Footer End  ------------------------------------------>
+    <footer>
+        <hr style="height:2px; width:100%;" class="mt-5">
+        <h1 class="text-center">Total:$<span id="grand-total">1299</span> </h1>
+    </footer>
+
 
     <!------------------------- javascript  --------------------------------------->
     <script src="./js/app.js"></script>
