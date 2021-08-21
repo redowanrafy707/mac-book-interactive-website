@@ -11,39 +11,58 @@ const memoryPrice = document.getElementById("memory-price")
 const storagePrice = document.getElementById("storage-price")
 const deliveryPrice = document.getElementById("delivery-price")
 const totalPrice = document.getElementById("total-price")
+const grandTotal = document.getElementById("grand-total")
 
+//buttons
+memoryButton1.addEventListener('click',function(){
+    extraMemorysPrice(0)
+    total ()
+})
+memoryButton2.addEventListener('click',function(){
+    extraMemorysPrice(180)
+    total ()
+})
 
-//memory
-memoryButton1.addEventListener("click", function(){
-    memoryPrice.innerText = Number(0)
-    total()
+storageButton1.addEventListener('click',function(){
+    extraStoragesPrice(0);
+    total ()
 })
-memoryButton2.addEventListener("click", function(){
-    memoryPrice.innerText = Number(180)
-    total()
+storageButton2.addEventListener('click',function(){
+    extraStoragesPrice(100);
+    total ()
 })
-// storage
-storageButton1.addEventListener("click", function(){
-    storagePrice.innerText= Number(0)
-    total()
+storageButton3.addEventListener('click',function(){
+    extraStoragesPrice(180);   
+    total ()
 })
-storageButton2.addEventListener("click", function(){
-    storagePrice.innerText = Number(100)
-    total()
+
+deliveryButton1.addEventListener('click',function(){
+    
+ deliverysPriceExtra (0);
+    total ()
 })
-storageButton3.addEventListener("click", function(){
-    storagePrice.innerText = Number(180)
-    total()
+deliveryButton2.addEventListener('click',function(){
+    deliverysPriceExtra (20);
+    total ()
+  
 })
-// delivery
-deliveryButton1.addEventListener("click", function(){
-    deliveryPrice.innerText = Number(0)
-    total()
-})
-deliveryButton2.addEventListener("click", function(){
-    deliveryPrice.innerText = Number(20)
-    total()
-})
+
+//button functions
+//Extra cost Fot Extra Memory 
+function extraMemorysPrice(extra){
+    memoryPrice.innerText = Number(extra);
+}
+//Extra Cost For ExtraStorage 
+function extraStoragesPrice(extra){
+    storagePrice.innerText = Number(extra);
+}
+
+//Extra cost For delivery Price
+function deliverysPriceExtra (extra){
+    deliveryPrice.innerText = Number(extra);
+
+}
+
 
 //total er function
 function total(){
@@ -53,14 +72,14 @@ function total(){
     const deliveryCost = Number(deliveryPrice.innerText)
     const totalCost = bestPriceCost + memoryCost + storageCost + deliveryCost
     totalPrice.innerText = totalCost
+    grandTotal.innerText = totalCost
 }
 
 ///apply button
 
 const applyButton = document.getElementById('apply-button');
 applyButton.addEventListener('click',function(){
-    let grandTotal = document.getElementById("grand-total")
-     const inputButton = document.getElementById('input-button')
+    const inputButton = document.getElementById('input-button')
      const inputButtonText = inputButton.value;
      total();
     if(inputButtonText == 'stevekaku'){
@@ -70,10 +89,7 @@ applyButton.addEventListener('click',function(){
     }
     else{
         const errorMessage = document.getElementById("error-message")
-        errorMessage.style.display = "block"
-        const totalPriceUpdated = totalPrice.innerText ;
-        grandTotal.innerText = totalPriceUpdated
-        
+        errorMessage.style.display = "block"    
     }
 })
 
